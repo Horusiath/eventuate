@@ -1,3 +1,5 @@
+.. _ref-event-sourced-actors:
+
 Event-sourced actors
 --------------------
 
@@ -84,12 +86,28 @@ The value of ``sharedClockEntry`` may also be instance-specific, if required.
 .. includecode:: ../code/EventSourcingDoc.scala
    :snippet: clock-entry-instance
 
+.. _ref-event-sourced-views:
+
 Event-sourced views
 -------------------
 
 An introduction to event-sourced views is already given in section :ref:`architecture` and the :ref:`user-guide`. Applications use event-sourced views for consuming events from an event log and for maintaining state on the query side (Q) of a CQRS_ architecture. 
 
 Like event-sourced actors, event-sourced views distinguish command processing from event processing. They must implement the EventsourcedView_ trait. ``EventsourcedView`` is a functional subset of ``EventsourcedActor`` that cannot ``persist`` events.
+
+.. _ref-event-sourced-writers:
+
+Event-sourced writers
+---------------------
+
+...
+
+.. _ref-event-sourced-processors:
+
+Event-sourced processors
+------------------------
+
+...
 
 State recovery
 --------------
@@ -243,7 +261,7 @@ Custom serializers can also be configured for the type parameter ``A`` of ``MVRe
 .. [#] The ``customDestinationAggregateIds`` parameter is described in section :ref:`event-routing`.
 .. [#] Writes from different event-sourced actors that have ``stateSync`` set to ``true`` are still batched, but not the writes from a single event-sourced actor.
 .. [#] Event replay can optionally start from :ref:`snapshots` of actor state.
-.. [#] :ref:`processors` can additionally route events between event logs.
+.. [#] :ref:`event-sourced-processors` can additionally route events between event logs.
 .. [#] The routing destinations of a DurableEvent_ can be obtained with its ``destinationAggregateIds`` method.
 
 .. _CQRS: http://martinfowler.com/bliki/CQRS.html

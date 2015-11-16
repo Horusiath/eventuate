@@ -17,6 +17,8 @@ This is a brief user guide to Eventuate. It is recommended to read sections :ref
 
 The user guide only scratches the surface of Eventuate. You can find further details in the :ref:`reference`.
 
+.. _guide-event-sourced-actors:
+
 Event-sourced actors
 --------------------
 
@@ -214,6 +216,8 @@ New operation-based CRDTs and their corresponding services can be developed with
    Eventuate’s CRDT approach is also described in `this article`_.
 
 .. _this article: https://krasserm.github.io/2015/02/17/Implementing-operation-based-CRDTs/
+
+.. _guide-event-sourced-views:
 
 Event-sourced views
 -------------------
