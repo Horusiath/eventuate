@@ -201,9 +201,10 @@ class EventsourcedProcessorSpec extends TestKit(ActorSystem("test")) with WordSp
       processLoad(actor)
       processReplay(actor, 1, 2, instanceId)
       actor ! Written(eventA)
-      actor ! Written(eventB)
-      actor ! Written(eventC)
       appProbe.expectMsg(2)
+      actor ! Written(eventB)
+      appProbe.expectMsg(2)
+      actor ! Written(eventC)
       processWrite(3, Seq(eventC1, eventC2))
     }
   }
